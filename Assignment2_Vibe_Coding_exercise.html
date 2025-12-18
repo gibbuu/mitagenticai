@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>East Coast Indian Community</title>
+  <meta name="description" content="A clean, elegant, modern community hub for the Indian community on the U.S. East Coast." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(255,255,255,.10);
+      --border: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --shadow: 0 18px 50px rgba(0,0,0,.40);
+      --radius: 18px;
+      --radius2: 22px;
+      --accent: #ff8a2a;
+      --accent2:#ffcc4a;
+      --link:#7dd3fc;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --focus: 0 0 0 4px rgba(255,138,42,.28);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(255,204,74,.25), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(125,211,252,.22), transparent 55%),
+        radial-gradient(900px 600px at 80% 90%, rgba(255,138,42,.18), transparent 55%),
+        linear-gradient(180deg, #060a14, #0b1220 45%, #0b1220);
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+    .container{ width:min(var(--max), calc(100% - 32px)); margin-inline:auto; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(16px);
+      background: rgba(10,15,28,.55);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; min-width: 240px; }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background:
+        radial-gradient(circle at 25% 30%, #ffcc4a, transparent 55%),
+        radial-gradient(circle at 70% 70%, #ff8a2a, transparent 50%),
+        radial-gradient(circle at 75% 25%, #7dd3fc, transparent 45%),
+        rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .brand h1{ font-size: 15.5px; margin:0; font-weight: 800; line-height:1.1; letter-spacing:.2px; }
+    .brand span{ display:block; font-weight: 500; font-size: 12.5px; color: var(--muted); }
+
+    nav{
+      display:flex; align-items:center; gap:4px;
+      padding:6px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius:999px;
+    }
+    nav a{
+      padding:10px 14px;
+      border-radius:999px;
+      font-size: 13.5px;
+      color: var(--muted);
+      display:flex; align-items:center; gap:8px;
+    }
+    nav a[aria-current="page"]{
+      color: var(--text);
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .right{
+      display:flex; align-items:center; gap:10px;
+      min-width:240px; justify-content:flex-end;
+    }
+    .search{
+      display:flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      width: min(320px, 100%);
+    }
+    .search input{
+      width:100%;
+      background:transparent;
+      border:0;
+      outline:0;
+      color: var(--text);
+      font-size: 13.5px;
+    }
+    .chip{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .avatar{
+      display:flex; align-items:center; gap:10px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+    }
+    .pfp{
+      width:28px; height:28px; border-radius:999px;
+      background: linear-gradient(135deg, rgba(255,204,74,.9), rgba(255,138,42,.85));
+      box-shadow: 0 10px 22px rgba(0,0,0,.28);
+    }
+    .avatar b{ font-size:13px; }
+
+    /* Hero */
+    .hero{
+      margin:18px 0 18px;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:
+        linear-gradient(120deg, rgba(255,204,74,.20), rgba(125,211,252,.14), rgba(255,138,42,.18)),
+        rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      position:relative;
+      isolation:isolate;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 350px at 20% 35%, rgba(255,204,74,.35), transparent 60%),
+        radial-gradient(700px 350px at 85% 25%, rgba(125,211,252,.35), transparent 55%),
+        radial-gradient(700px 350px at 70% 85%, rgba(255,138,42,.30), transparent 60%);
+      filter: blur(2px);
+      z-index:-1;
+    }
+    .heroInner{
+      display:grid;
+      grid-template-columns: 1.15fr .95fr;
+      gap:22px;
+      padding: 28px;
+      align-items:stretch;
+    }
+    .heroCopy h2{
+      margin:0 0 10px;
+      font-size: clamp(22px, 3.2vw, 36px);
+      letter-spacing:-.3px;
+      line-height:1.08;
+    }
+    .heroCopy p{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 14.8px;
+      max-width: 60ch;
+      line-height:1.55;
+    }
+    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .btn{
+      appearance:none; border:0; cursor:pointer;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-weight: 750;
+      font-size: 13.5px;
+      letter-spacing:.2px;
+      display:inline-flex; align-items:center; gap:10px;
+      transition: transform .12s ease, filter .12s ease, background .12s ease;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btnPrimary{
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      color:#1b1206;
+      box-shadow: 0 16px 35px rgba(255,138,42,.22);
+    }
+    .btnPrimary:hover{ filter: brightness(1.03); }
+    .btnGhost{
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border:1px solid var(--border);
+    }
+    .btnGhost:hover{ background: rgba(255,255,255,.10); }
+
+    .heroMedia{
+      border-radius: 18px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.15);
+      overflow:hidden;
+      position:relative;
+      min-height: 220px;
+    }
+    .heroMedia .badge{
+      position:absolute; top:12px; left:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.85);
+      font-size:12px;
+      backdrop-filter: blur(12px);
+    }
+    .heroMedia img{
+      width:100%; height:100%;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.08) contrast(1.03);
+    }
+
+    /* Grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr 340px;
+      gap:16px;
+      margin-bottom: 28px;
+    }
+
+    .card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 45px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .cardHeader{
+      padding: 14px 16px 12px;
+      display:flex; align-items:center; justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .cardHeader h3{
+      margin:0;
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .cardHeader .smallLink{
+      font-size:12.5px;
+      color: rgba(255,255,255,.75);
+    }
+    .cardBody{ padding: 14px 16px 16px; }
+
+    .row{
+      display:flex; gap:12px; align-items:flex-start;
+      padding: 12px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .row:first-child{ border-top:0; padding-top:0; }
+    .thumb{
+      width:44px; height:44px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      overflow:hidden;
+      flex: 0 0 auto;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .meta{ flex:1; min-width:0; }
+    .meta b{ display:block; font-size: 13.5px; margin-bottom: 4px; }
+    .meta small{ color: var(--muted); font-size: 12.5px; line-height:1.35; display:block; }
+    .pill{
+      font-size:11.5px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.85);
+      white-space:nowrap;
+    }
+
+    /* Highlights cards */
+    .highlightGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .highlight{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 220px;
+    }
+    .highlight img{ width:100%; height:122px; object-fit:cover; display:block; }
+    .highlight .pad{ padding: 12px 12px 14px; display:flex; flex-direction:column; gap:10px; }
+    .highlight h4{ margin:0; font-size: 13.8px; }
+    .highlight p{ margin:0; color: var(--muted); font-size: 12.8px; line-height:1.45; }
+    .hlFooter{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto; }
+    .hlFooter .count{ color: rgba(255,255,255,.75); font-size: 12px; }
+    .miniBtn{
+      padding:8px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .miniBtn:hover{ background: rgba(255,255,255,.10); }
+
+    /* Sidebar */
+    .stack{ display:flex; flex-direction:column; gap:16px; }
+    .listItem{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding: 10px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .listItem:first-child{ border-top:0; padding-top:0; }
+    .person{ display:flex; align-items:center; gap:10px; min-width:0; }
+    .person .face{
+      width:34px; height:34px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(125,211,252,.9), rgba(255,204,74,.85));
+      flex: 0 0 auto;
+    }
+    .person .who{ min-width:0; }
+    .person .who b{ display:block; font-size: 13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .person .who small{ display:block; font-size:12px; color: var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .score{ font-size:12.5px; color: rgba(255,255,255,.82); }
+    .score strong{ color: var(--accent2); font-weight:800; }
+
+    /* Directory banner */
+    .directory{
+      margin-top:12px;
+      border-radius: 16px;
+      padding: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(500px 250px at 30% 30%, rgba(255,204,74,.22), transparent 60%),
+        radial-gradient(500px 250px at 80% 70%, rgba(255,138,42,.18), transparent 60%),
+        rgba(255,255,255,.04);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .directory b{ display:block; font-size: 13.5px; margin-bottom: 4px; }
+    .directory small{ color: var(--muted); font-size: 12.5px; line-height:1.35; display:block; }
+    .directory .btnSmall{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 0;
+      background: linear-gradient(135deg, rgba(255,204,74,.95), rgba(255,138,42,.92));
+      color:#1b1206;
+      font-weight: 800;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(255,255,255,.10);
+      padding: 22px 0 30px;
+      color: rgba(255,255,255,.70);
+      font-size: 12.5px;
+    }
+    .footerRow{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .footerRow a{ color: rgba(255,255,255,.78); }
+
+    /* Accessibility */
+    :focus-visible{
+      outline:none;
+      box-shadow: var(--focus);
+      border-radius: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      nav{ display:none; }
+      .right{ min-width:auto; }
+      .heroInner{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .highlightGrid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container topbar">
+    <div class="brand" aria-label="Site brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>East Coast Indian Community</h1>
+        <span>Connect • Celebrate • Collaborate</span>
+      </div>
+    </div>
+
+    <nav aria-label="Primary">
+      <a href="#" aria-current="page">Home</a>
+      <a href="#">Events</a>
+      <a href="#">Discussions</a>
+      <a href="#">Resources</a>
+      <a href="#">Blog</a>
+    </nav>
+
+    <div class="right">
+      <div class="search" role="search">
+        <span aria-hidden="true">🔎</span>
+        <input type="search" placeholder="Search events, groups, resources…" aria-label="Search" />
+      </div>
+      <span class="chip" title="Notifications">🔔 3</span>
+      <div class="avatar" aria-label="User profile">
+        <div class="pfp" aria-hidden="true"></div>
+        <b>Rahul</b>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome">
+    <div class="heroInner">
+      <div class="heroCopy">
+        <h2>Welcome to the East Coast Indian Community</h2>
+        <p>
+          A modern hub to discover vibrant cultural events, build friendships, support local businesses,
+          and collaborate on community initiatives across New York, New Jersey, Massachusetts, and beyond.
+        </p>
+        <div class="ctaRow">
+          <button class="btn btnPrimary" type="button">Join the Community</button>
+          <button class="btn btnGhost" type="button">Explore Upcoming Events</button>
+          <span class="chip">🇺🇸 East Coast • 🇮🇳 Culture</span>
+        </div>
+      </div>
+
+      <!-- Vibrant collaboration image (free placeholder) -->
+      <div class="heroMedia" aria-label="Community collaboration image">
+        <div class="badge">Collaboration in action</div>
+        <img
+          alt="Vibrant community collaboration"
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT GRID -->
+  <section class="grid" aria-label="Homepage content">
+    <!-- Upcoming Events -->
+    <article class="card" aria-label="Upcoming events">
+      <div class="cardHeader">
+        <h3>Upcoming Events</h3>
+        <a class="smallLink" href="#">View calendar →</a>
+      </div>
+      <div class="cardBody">
+        <div class="row">
+          <div class="thumb" aria-hidden="true">
+            <img alt="" src="https://images.unsplash.com/photo-1602532305019-3dbbd2a77380?auto=format&fit=crop&w=300&q=80" />
+          </div>
+          <div class="meta">
+            <b>East Coast: Diwali Celebration</b>
+            <small>Sat • Nov 4 • New York, NY • Cultural night + food + performances</small>
+          </div>
+          <span class="pill">RSVP</span>
+        </div>
+
+        <div class="row">
+          <div class="thumb" aria-hidden="true">
+            <img alt="" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=300&q=80" />
+          </div>
+          <div class="meta">
+            <b>Community Volunteer Day</b>
+            <small>Sun • Dec 10 • Jersey City, NJ • Food drive + mentoring</small>
+          </div>
+          <span class="pill">Sign up</span>
+        </div>
+
+        <div class="row">
+          <div class="thumb" aria-hidden="true">
+            <img alt="" src="https://images.unsplash.com/photo-1520975682031-ae5b4a6f20f0?auto=format&fit=crop&w=300&q=80" />
+          </div>
+          <div class="meta">
+            <b>Career & Networking Mixer</b>
+            <small>Thu • Jan 18 • Boston, MA • Panels + peer mentoring</small>
+          </div>
+          <span class="pill">Join</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Recent Discussions -->
+    <article class="card" aria-label="Recent discussions">
+      <div class="cardHeader">
+        <h3>Recent Discussions</h3>
+        <a class="smallLink" href="#">View more →</a>
+      </div>
+      <div class="cardBody">
+        <div class="row">
+          <div class="thumb" aria-hidden="true">
+            <img alt="" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=300&q=80" />
+          </div>
+          <div class="meta">
+            <b>Best Indian Restaurants in NYC Area</b>
+            <small>62 replies • Last post: 20 mins ago • Food & Dining</small>
+          </div>
+          <span class="pill">Open</span>
+        </div>
+
+        <div class="row">
+          <div class="thumb" aria-hidden="true">
+            <img alt="" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=300&q=80" />
+          </div>
+          <div class="meta">
+            <b>Starting a Local Entrepreneurship Group</b>
+            <small>18 replies • Last post: 2 hrs ago • Business</small>
+          </div>
+          <span class="pill">Reply</span>
+        </div>
+
+        <div class="row">
+          <div class="thumb" aria-hidden="true">
+            <img alt="" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=300&q=80" />
+          </div>
+          <div class="meta">
+            <b>Kids’ Hindi & Cultural Classes — Recommendations?</b>
+            <small>34 replies • Last post: yesterday • Family</small>
+          </div>
+          <span class="pill">Open</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="stack" aria-label="Sidebar">
+      <div class="card" aria-label="Local resources">
+        <div class="cardHeader">
+          <h3>Local Resources</h3>
+          <a class="smallLink" href="#">Browse →</a>
+        </div>
+        <div class="cardBody">
+          <div class="listItem">
+            <div class="person">
+              <div class="face" aria-hidden="true"></div>
+              <div class="who">
+                <b>Annapurna Indian Grocery</b>
+                <small>Jersey City, NJ</small>
+              </div>
+            </div>
+            <div class="score">★ 4.8</div>
+          </div>
+
+          <div class="listItem">
+            <div class="person">
+              <div class="face" aria-hidden="true"></div>
+              <div class="who">
+                <b>East Coast Hindi Classes</b>
+                <small>Edison, NJ</small>
+              </div>
+            </div>
+            <div class="score">★ 4.7</div>
+          </div>
+
+          <div class="listItem">
+            <div class="person">
+              <div class="face" aria-hidden="true"></div>
+              <div class="who">
+                <b>Chai House Café</b>
+                <small>Queens, NY</small>
+              </div>
+            </div>
+            <div class="score">★ 4.6</div>
+          </div>
+
+          <div class="directory" role="note" aria-label="Directory callout">
+            <div>
+              <b>Discover local businesses</b>
+              <small>Find shops, restaurants, services, and community groups near you.</small>
+            </div>
+            <button class="btnSmall" type="button">Browse Directory</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Top contributors">
+        <div class="cardHeader">
+          <h3>Top Contributors</h3>
+          <a class="smallLink" href="#">Leaderboard →</a>
+        </div>
+        <div class="cardBody">
+          <div class="listItem">
+            <div class="person">
+              <div class="face" aria-hidden="true"></div>
+              <div class="who">
+                <b>Priya Patel</b>
+                <small>Community Leader</small>
+              </div>
+            </div>
+            <div class="score"><strong>1320</strong> pts</div>
+          </div>
+
+          <div class="listItem">
+            <div class="person">
+              <div class="face" aria-hidden="true"></div>
+              <div class="who">
+                <b>Amit Sharma</b>
+                <small>Event Organizer</small>
+              </div>
+            </div>
+            <div class="score"><strong>1180</strong> pts</div>
+          </div>
+
+          <div class="listItem">
+            <div class="person">
+              <div class="face" aria-hidden="true"></div>
+              <div class="who">
+                <b>Neha Rao</b>
+                <small>Recipe Guru</small>
+              </div>
+            </div>
+            <div class="score"><strong>980</strong> pts</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- COMMUNITY HIGHLIGHTS -->
+  <section class="card" aria-label="Community highlights">
+    <div class="cardHeader">
+      <h3>Community Highlights</h3>
+      <a class="smallLink" href="#">See all →</a>
+    </div>
+    <div class="cardBody">
+      <div class="highlightGrid">
+        <article class="highlight">
+          <img
+            alt="Friends collaborating at a community cookout"
+            src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=80"
+          />
+          <div class="pad">
+            <h4>Indian Cuisine Cook-Off Recap</h4>
+            <p>Neighbors shared family recipes, judged by local chefs — with plenty of collaboration and laughs.</p>
+            <div class="hlFooter">
+              <span class="count">145 likes</span>
+              <button class="miniBtn" type="button">Read More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="highlight">
+          <img
+            alt="Colorful Holi celebration with vibrant powder and joyful crowd"
+            src="https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?auto=format&fit=crop&w=1200&q=80"
+          />
+          <div class="pad">
+            <h4>Holi Festival Photo Gallery</h4>
+            <p>Vibrant moments from our Holi celebration—music, dance, and community collaboration.</p>
+            <div class="hlFooter">
+              <span class="count">210 comments</span>
+              <button class="miniBtn" type="button">View Gallery</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div>© <span id="y"></span> East Coast Indian Community • Built for connection and collaboration.</div>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="#">Privacy</a>
+      <a href="#">Code of Conduct</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
